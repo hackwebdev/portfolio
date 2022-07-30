@@ -48,10 +48,64 @@
               quod facilis ipsum modi, numquam aperiam voluptatem at odio ut?
               Quod cumque optio porro!
             </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div id="skills" class="tab-contents active-tab">
+              <ul>
+                <li><span>UI?UX</span><br />Designing web app interfaces</li>
+                <li><span>Web Development</span><br />Web app development</li>
+                <li>
+                  <span>App Development</span><br />Building Android/iOS apps
+                </li>
+              </ul>
+            </div>
+            <div id="experience" class="tab-contents">
+              <ul>
+                <li>
+                  <span>2021-current</span><br />UI/UX Design Training at ET
+                  Institute
+                </li>
+                <li><span>2019-2021</span><br />Team lead a StarApp LLC</li>
+                <li>
+                  <span>2017-2019</span><br />Internship at ekart eCommerce
+                </li>
+              </ul>
+            </div>
+            <div id="education" class="tab-contents">
+              <ul>
+                <li>
+                  <span>2016</span><br />UI/UX Design Training at ET Institute
+                </li>
+                <li><span>2016</span><br />MBA from MIT Bangalore</li>
+                <li><span>2014</span><br />BBA from ISM Bangalore</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>
+    <script>
+      const tablinks = document.getElementByClassName('tab-links')
+      const tabcontents = document.getElementByClassName('tab-contents')
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove('active-link')
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove('active-tab')
+        }
+        event.currentTarget.classList.add('active-link')
+        document.getElementById(tabname).classList.add('active-tab')
+      }
+    </script>
   </body>
 </html>
