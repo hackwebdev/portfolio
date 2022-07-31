@@ -1,7 +1,11 @@
 $dark: #080808;
 
 body {
-    background-color: $dark;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+  background-color: $dark;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  /* nav menu onclick smooth scroll */
+  scroll-behavior: smooth;
 }
