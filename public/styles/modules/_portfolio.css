@@ -1,0 +1,100 @@
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    /* parent container for positioning */
+    position: relative;
+    overflow: hidden;
+
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    /* from hover creates a hover effect */
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    /* height: 100%; */
+    /* hidden until cursor is hovering*/
+    height: 0%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
+    /* reposition inside the parent container */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    /* center the text inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    /* cascades to description text */
+    font-size: 14px;
+    /* from .work:hover controls the timing of transition */
+    transition: height 0.5s;
+
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    /* makes a circle */
+    border-radius: 50%;
+    /* redundant i think */
+    text-align: center;
+}
+
+.work:hover img {
+    /* back to .work img */
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    /* increases the height .layer */
+    height: 100%;
+}
+
+.btn {
+    /* to add margins */
+    display: block;
+    margin: 50px auto;
+    /* width doesn't stretches over */
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    /* creates transition background color */
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    /* back to btn add transition */
+    background-color: #ff004f;
+}
